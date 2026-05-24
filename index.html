@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inkwell - StoryShare Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Inkwell</div>
+        <div class="nav-auth" id="navAuth">
+            </div>
+    </nav>
+
+    <main class="container">
+        <section id="authSection" class="card hidden">
+            <h2 id="authTitle">Login</h2>
+            <form id="authForm">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit" class="btn" id="authBtn">Login</button>
+                <p id="authToggle">Don't have an account? <span onclick="toggleAuthMode()">Register here</span></p>
+            </form>
+        </section>
+
+        <section id="editorSection" class="card hidden">
+            <h2 id="editorTitle">Create New Post</h2>
+            <form id="postForm">
+                <input type="hidden" id="postId">
+                <input type="text" id="postTitle" placeholder="Title" required>
+                <textarea id="postContent" placeholder="Write your story here..." rows="6" required></textarea>
+                <div class="form-actions">
+                    <button type="submit" class="btn">Save Post</button>
+                    <button type="button" class="btn btn-secondary" onclick="hideEditor()">Cancel</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="feedSection">
+            <div class="feed-header">
+                <h2>Recent Stories</h2>
+                <button id="newPostBtn" class="btn hidden" onclick="showEditor()">+ New Post</button>
+            </div>
+            <div id="postsContainer">
+                </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
